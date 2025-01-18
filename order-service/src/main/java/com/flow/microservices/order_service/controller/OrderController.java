@@ -1,0 +1,23 @@
+package com.flow.microservices.order_service.controller;
+
+import com.flow.microservices.order_service.dto.OrderReqest;
+import com.flow.microservices.order_service.service.OrderService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/order")
+@RequiredArgsConstructor
+public class OrderController {
+
+    private final OrderService orderService;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public String placeOrder(@RequestBody OrderReqest orderReqest) {
+        orderService.placeOrder(orderReqest);
+        return "Order placed successfully";
+    }
+
+}
