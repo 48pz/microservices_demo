@@ -7,4 +7,6 @@ order-service/mysql/
 order-service/src/main/resources/application.properties
 order-service/test/resources/application.properties
 product-service/src/main/resources/application.properties
+api-gateway/src/main/resources/application.properties
+notification-service/src/main/resources/application.properties
 
